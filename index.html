@@ -387,20 +387,31 @@ weather.notify("Cloudy in the morning");
 						<h2>single responsbility</h2>
 						<pre>
 							<code data-item>
-function getPrice() {	
-	function getLineItemrice(){}
-
-	function getSalesPrice(){}
-
-	function getTotalPrice(){}
-
-	function getPrintPrice(){}
+function displayPrice(sum) {
+	console.log('总计：' + sum.toFixed(2) + '(元)')
 }
 							</code>
 						</pre>
-					</section><section data-background="#f28d20">
+						<pre>
+							<code data-item>
+function generateOutputPrice(sum) {
+	return '总计：' + sum.toFixed(2) + '(元)'
+}
+function displayPrice(price) {
+	console.log(price)
+}
+							</code>
+						</pre>
+					</section>
+					<section data-background="#f28d20">
 						<h2>never be more than <span style="color:#306199">one reason </span>for a class to change</h2>
 						
+					</section>
+					<section data-background="#f28d20">
+						<h2>open/closed</h2>
+						<a href="#" class="image navigate-down">
+							<img src="ocp.jpg" alt="ocp">
+						</a>
 					</section>
 					<section data-background="#f28d20">
 						<h2>open/closed</h2>
@@ -425,8 +436,28 @@ function getSalesPrice() {
 					</section>
 					<section data-background="#FF9900">
 						<h2>dependency inversion</span></h2>
+					</section>				
+				</section>
+
+				<section>
+					<section data-background="#CDB841">
+						<h2>encapsulation</h2>
+						<a href="#" class="image navigate-down">
+							<img src="encapsulation.jpg" alt="encapsulation">
+						</a>
 					</section>
-					
+					<section data-background="#CDB841">
+						<h2>inheritance</h2>
+						<a href="#" class="image navigate-down">
+							<img src="inheritance.jpg" alt="inheritance">
+						</a>
+					</section>
+					<section data-background="#CDB841">
+						<h2>polymorphism</h2>
+						<a href="#" class="image navigate-down">
+							<img src="polymorphism.gif" alt="polymorphism">
+						</a>
+					</section>
 				</section>
 
 				<section>
@@ -437,7 +468,7 @@ function getSalesPrice() {
 					<section data-background="#674230">
 						<h2>Separate <span style="color:#A9C47F">units</span></h2>
 					</section>
-					
+
 					<section data-background="#674230">
 						<h2>different <span style="color:#A9C47F">objects</span></h2>
 					</section>
