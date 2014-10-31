@@ -46,7 +46,8 @@
 					<h1>OO in JavaScript</h1>
 					<h3>A very different way</h3>
 					<p>
-						<small>Created by <a href="http://icodeit.org">Juntao Qiu</a> / <a href="#">juntao.qiu</a></small>
+						<small>Created by <a href="http://icodeit.org">Juntao Qiu</a> / <a href="#">juntao.qiu</a>, </small>
+						<small><a href="#">Bian Rui</a> / <a href="#">psychebb</a></small>
 					</p>
 				</section>
 	
@@ -310,7 +311,59 @@ weather.notify("Cloudy in the morning");
 				</section>
 
 				<section>
-					<h2>SOLID</h2>
+					<section data-background="#f28d20">
+						<h2>solid</h2>
+					</section>
+					<section data-background="#f28d20">
+						<h2>single responsbility</h2>
+						<a href="#" class="image navigate-down">
+							<img src="god-class.jpg" alt="god-class">
+						</a>
+					</section>
+					<section data-background="#f28d20">
+						<h2>single responsbility</h2>
+						<pre>
+							<code data-item>
+function getPrice() {	
+	function getLineItemrice(){}
+
+	function getSalesPrice(){}
+
+	function getTotalPrice(){}
+
+	function getPrintPrice(){}
+}
+							</code>
+						</pre>
+					</section><section data-background="#f28d20">
+						<h2>never be more than <span style="color:#306199">one reason </span>for a class to change</h2>
+						
+					</section>
+					<section data-background="#f28d20">
+						<h2>open/closed</h2>
+						<pre>
+							<code data-item>
+function getSalesPrice() {	
+	if(promotion.type == 'BUY_TWO_GET_ONE_FREE') {
+		//..
+	}
+	if(promotion.type == '50_PERCENT_OFF') {
+		//..
+	}
+}
+							</code>
+						</pre>
+					</section>
+					<section data-background="#FF9900">
+						<h2>liskov substitution</span></h2>
+					</section>
+					<section data-background="#FF9900">
+						<h2>interface segregation</span></h2>
+					</section>
+					<section data-background="#FF9900">
+						<h2>dependency inversion</span></h2>
+					</section>
+					
 				</section>
 				
 				<section>
