@@ -4,10 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<title>Object Oriented Programming in JavaScript</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -219,10 +216,17 @@ console.log(myCart.count());
 
 				<section>
 					<section data-background="#dd514c">
-						<h2>Design Pattern</h2>
+						<h2>Design by example</h2>
 					</section>
+					
 					<section data-background="#dd514c">
-						<h2>Observer model - interface</h2>
+						<a href="#" class="image navigate-down" >
+							<img src="observer_pattern_resized.png" alt="observer model" style="background-color: #ffffff;">
+						</a>
+					</section>
+
+					<section data-background="#dd514c">
+						<h2>Observer pattern - interface</h2>
 						<pre><code data-item>
 function Observer() {
 }
@@ -234,7 +238,7 @@ Observer.prototype.update = function() {
 					</section>
 
 					<section data-background="#dd514c">
-						<h2>Observer model - implementation</h2>
+						<h2>Observer pattern - implementation</h2>
 						<pre><code data-item>
 var bbs = Object.create(Observer.prototype);
 bbs.update = function(data) {
@@ -244,7 +248,7 @@ bbs.update = function(data) {
 					</section>
 
 					<section data-background="#dd514c">
-						<h2>Observer model - Subject</h2>
+						<h2>Observer pattern - Subject</h2>
 						<pre><code data-item>
 var Subject = function() {
 	this.observers = [];
@@ -263,7 +267,7 @@ Subject.prototype.notify = function(data) {
 					</section>
 
 					<section data-background="#dd514c">
-						<h2>Observer model - usage</h2>
+						<h2>Observer pattern - usage</h2>
 						<pre><code data-item>
 var weather = new Subject();
 
@@ -275,7 +279,7 @@ weather.notify("Cloudy in the morning");
 
 
 					<section data-background="#dd514c">
-						<h2>Observer model - usage</h2>
+						<h2>Observer pattern - usage</h2>
 						<pre><code data-item>
 var alwayson = Object.create(Observer.prototype);
 alwayson.update = function(data) {
@@ -285,7 +289,7 @@ alwayson.update = function(data) {
 					</section>	
 
 					<section data-background="#dd514c">
-						<h2>Observer model - usage</h2>
+						<h2>Observer pattern - usage</h2>
 						<pre><code data-item>
 var weather = new Subject();
 
@@ -365,7 +369,7 @@ function getSalesPrice() {
 					</section>
 					
 				</section>
-				
+
 				<section>
 					<h2>THE END</h2>
 					<p>
