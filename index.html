@@ -59,7 +59,7 @@
 				
 				<section>
 					<section data-background="#05C3DE">
-						<h2>Breif <span style="color:#ff5e99">history</span> of oop</h2>
+						<h2>Brief <span style="color:#ff5e99">history</span> of oop</h2>
 					</section>
 					<section data-background="#05C3DE">
 						<h2>Software <span style="color:#ff5e99">crisis</span></h2>
@@ -374,6 +374,27 @@ weather.notify("Cloudy in the morning");
 				</section>
 
 				<section>
+					<section data-background="#AC145A">
+						<h2>encapsulation</h2>
+						<a href="#" class="image navigate-down">
+							<img src="encapsulation.jpg" alt="encapsulation">
+						</a>
+					</section>
+					<section data-background="#AC145A">
+						<h2>inheritance</h2>
+						<a href="#" class="image navigate-down">
+							<img src="inheritance.jpg" alt="inheritance">
+						</a>
+					</section>
+					<section data-background="#AC145A">
+						<h2>polymorphism</h2>
+						<a href="#" class="image navigate-down">
+							<img src="polymorphism.gif" alt="polymorphism">
+						</a>
+					</section>
+				</section>
+
+				<section>
 					<section data-background="#f28d20">
 						<h2>solid</h2>
 					</section>
@@ -385,23 +406,19 @@ weather.notify("Cloudy in the morning");
 					</section>
 					<section data-background="#f28d20">
 						<h2>single responsbility</h2>
-						<pre>
-							<code data-item>
+						<pre><code data-item>
 function displayPrice(sum) {
 	console.log('总计：' + sum.toFixed(2) + '(元)')
 }
-							</code>
-						</pre>
-						<pre>
-							<code data-item>
+							</code></pre>
+						<pre><code data-item>
 function generateOutputPrice(sum) {
 	return '总计：' + sum.toFixed(2) + '(元)'
 }
 function displayPrice(price) {
 	console.log(price)
 }
-							</code>
-						</pre>
+							</code></pre>
 					</section>
 					<section data-background="#f28d20">
 						<h2>never be more than <span style="color:#306199">one reason </span>for a class to change</h2>
@@ -415,19 +432,141 @@ function displayPrice(price) {
 					</section>
 					<section data-background="#f28d20">
 						<h2>open/closed</h2>
-						<pre>
-							<code data-item>
-function getSalesPrice() {	
-	if(promotion.type == 'BUY_TWO_GET_ONE_FREE') {
-		//..
-	}
-	if(promotion.type == '50_PERCENT_OFF') {
-		//..
-	}
+						<pre><code data-item>
+function calculateArea(rectangles) {
+	var area = 0;
+	rectangles.forEach(function(rectangle) {
+	    area += rectangle.width * rectangle.height;
+	});
+	return area;
 }
-							</code>
-						</pre>
+
+var rectangles = [{
+	width: 10,
+	height: 20	
+}, {
+	width: 30,
+	height: 20
+}];
+
+console.log(calculateArea(rectangles));
+							</code></pre>
 					</section>
+
+					<section data-background="#f28d20">
+						<h2>open/closed</h2>
+						<pre><code data-item>
+var shapes = [{
+	width: 10,
+	height: 20	
+}, {
+	width: 30,
+	height: 20
+}, {
+	radius: 10
+}];
+							</code></pre>
+					</section>
+					<section data-background="#f28d20">
+						<h2>open/closed</h2>
+						<pre><code data-item>
+function calculateArea(rectangles) {
+	var area = 0;
+	rectangles.forEach(function(rectangle) {
+	    if(rectangle.radius) {
+		        area += Math.PI * rectangle.radius * rectangle.radius;
+	    } else {
+		        area += rectangle.width * rectangle.height;
+	    }
+	});
+	return area;
+}
+						</code></pre>
+					</section>
+					<section data-background="#f28d20">
+						<h2>open/closed</h2>
+						<pre><code data-item>
+var shapes = [{
+	width: 10,
+	height: 20	
+}, {
+	width: 30,
+	height: 20
+}, {
+	radius: 10
+}, {
+	base: 20,
+	height: 10
+}];
+						</code></pre>
+					</section>					
+					<section data-background="#f28d20">
+						<h2>open/closed</h2>
+						<pre><code data-item>
+function Shape() {}
+
+Shape.prototype.area = function() {
+	throw new Error("not implemented");
+}
+						</code></pre>
+					</section>					
+					<section data-background="#f28d20">
+						<h2>open/closed</h2>
+						<pre><code data-item>
+function Rectangle(width, height) {
+	Shape.call(this);
+	this.width = width;
+	this.height = height;
+}
+
+Rectangle.prototype = Object.create(Shape.prototype);
+Rectangle.prototype.area = function() {
+	return this.width * this.height;
+}
+						</code></pre>
+					</section>
+					<section data-background="#f28d20">
+						<h2>open/closed</h2>
+						<pre><code data-item>
+var rect1 = new Rectangle(10, 20);
+var rect2 = new Rectangle(30, 20);
+var shapes = [rect1, rect2];
+
+function calculateArea(shapes) {
+	var area = 0;
+	shapes.forEach(function(shape) {
+	    area += shape.area();
+	});
+	return area;
+}
+						</code></pre>
+					</section>
+
+					<section data-background="#f28d20">
+						<h2>open/closed</h2>
+						<pre><code data-item>
+function Circle(radius) {
+	Shape.call(this);
+	this.radius = radius;
+}
+
+Circle.prototype = Object.create(Shape.prototype);
+Circle.prototype.area = function() {
+	return Math.PI * this.radius * this.radius;
+}
+						</code></pre>
+					</section>
+
+					<section data-background="#f28d20">
+						<h2>open/closed</h2>
+						<pre><code data-item>
+var rect1 = new Rectangle(10, 20);
+var rect2 = new Rectangle(30, 20);
+var circle1 = new Circle(10);
+var shapes = [rect1, rect2, circle1];
+						</code></pre>
+					</section>
+
 					<section data-background="#FF9900">
 						<h2>liskov substitution</span></h2>
 					</section>
@@ -437,27 +576,6 @@ function getSalesPrice() {
 					<section data-background="#FF9900">
 						<h2>dependency inversion</span></h2>
 					</section>				
-				</section>
-
-				<section>
-					<section data-background="#CDB841">
-						<h2>encapsulation</h2>
-						<a href="#" class="image navigate-down">
-							<img src="encapsulation.jpg" alt="encapsulation">
-						</a>
-					</section>
-					<section data-background="#CDB841">
-						<h2>inheritance</h2>
-						<a href="#" class="image navigate-down">
-							<img src="inheritance.jpg" alt="inheritance">
-						</a>
-					</section>
-					<section data-background="#CDB841">
-						<h2>polymorphism</h2>
-						<a href="#" class="image navigate-down">
-							<img src="polymorphism.gif" alt="polymorphism">
-						</a>
-					</section>
 				</section>
 
 				<section>
